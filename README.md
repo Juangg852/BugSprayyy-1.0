@@ -73,7 +73,8 @@ This app will provide solutions to users who may be struggling on how to solve o
      * Next: Can Access Settings
 
 ## Wireframes
-![](https://i.imgur.com/apasTwM.jpg)
+![Untitled_Artwork](https://user-images.githubusercontent.com/82347440/140418311-b15005b6-ab5f-420e-a704-01a36fcbfa2e.png)
+
 
 
 ## Schema 

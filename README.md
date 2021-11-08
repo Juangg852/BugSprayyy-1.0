@@ -73,15 +73,110 @@ This app will provide solutions to users who may be struggling on how to solve o
      * Next: Can Access Settings
 
 ## Wireframes
-![Untitled_Artwork](https://user-images.githubusercontent.com/82347440/140418311-b15005b6-ab5f-420e-a704-01a36fcbfa2e.png)
+![](https://i.imgur.com/FBxOuJS.png)
 
 
 
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+| Property | Type | Description |
+| -------- | -------- | -------- |
+| ObjectId     |  String   | Unique id for user post     |
+| Author |Pointer to user| Image author|
+| Image | File | Image the user post |
+| Caption | String | Image/File Caption by author |
+| Text | String  | User can Post Questions |
+| CommentsCount| Number | Number of Comments a Post has |
+| Document | File | User can Choose a File to Post |
+| PostCount | Number | Number of Posted Questions |
+| Answered Questions | Number | Number of questions answered by the user  |
+| !?Count | Number | Number of !? on a post |
+| UserLevel | Number | User level 1-3 Beginner-HardCore |
+| UserProgrammingLanguages| Number | User can pick as many Languages as they want 1-10 (C++ - Java) |
+|Good|Luck| !!! |
+
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+* Login Screen
+    * (Read/Get) Collect user data as they log in
+>      let user = PFUser()
+>         user.username = usernameField.text
+>         user.password = passwordField.text
+> 
+>         user.signUpInBackground { (success, error) in
+>             if success {
+>                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
+>             } else {
+>                 print("Error onSignup \(String(describing: error?.localizedDescription))")
+>             }
+>         }
+* Home Screen 
+    * (Read/Get) Query all posts where user is author
+>         let post = posts[indexPath.section]
+        let comments = (post["comments"] as? [PFObject]) ?? []
+
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
+
+            let user = post["author"] as! PFUser
+            cell.usernameLabel.text = user.username
+            cell.captionLabel.text = (post["caption"] as! String)
+
+            let imageFile = post["image"] as! PFFileObject
+            let urlString = imageFile.url!
+            let url = URL(string: urlString)!
+
+            cell.photoView.af_setImage(withURL: url)
+
+
+            return cell
+        }else if indexPath.row <= comments.count {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell") as! CommentCell
+
+            let comment = comments[indexPath.row - 1]
+            cell.commentLabel.text = comment["text"] as? String
+
+            let user = comment["author"] as! PFUser
+            cell.nameLabel.text = user.username
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AddCommentCell")!
+            return cell
+        }
+* (Create/Post) Adding a comment
+> let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell") as! CommentCell
+> 
+> >let comment = comments[indexPath.row - 1]
+> cell.commentLabel.text = comment["text"] as? String
+> 
+> let user = comment["author"] as! PFUser
+> cell.nameLabel.text = user.username
+> >return cell
+* Logging Off
+>      PFUser.logOut()
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else {return}
+
+        delegate.window?.rootViewController = loginViewController
+    }
+* Creating Post Screen
+    * (Create) User is creating a new post
+>         let post = PFObject(className: "Posts")
+>         post["caption"] = commentField.text
+>         post["author"] = PFUser.current()!
+> 
+>         let imageData = imageView.image!.pngData()
+>         let file = PFFileObject(name: "image.png", data: imageData!)
+> 
+>         post["image"] = file
+> 
+>         post.saveInBackground { (success, error) in
+>             if success{
+>                 self.dismiss(animated: true, completion: nil)
+>                 print("saved")
+>             }else{
+>                 print(" error")
+>             }
+>         }
+>     }

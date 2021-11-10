@@ -94,7 +94,6 @@ This app will provide solutions to users who may be struggling on how to solve o
 | !?Count | Number | Number of !? on a post |
 | UserLevel | Number | User level 1-3 Beginner-HardCore |
 | UserProgrammingLanguages| Number | User can pick as many Languages as they want 1-10 (C++ - Java) |
-|Good|Luck| !!! |
 
 ### Networking
 * Login Screen

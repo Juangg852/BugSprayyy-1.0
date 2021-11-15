@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0715B3E72741F50100786CBD /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715B3E62741F50100786CBD /* LogInViewController.swift */; };
+		8487925A13E683B4C2AE8DBA /* Pods_BugSpray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8423164F6168B5BAC10DB813 /* Pods_BugSpray.framework */; };
 		DED2D0EE2739B49F00179174 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED2D0ED2739B49F00179174 /* AppDelegate.swift */; };
 		DED2D0F02739B49F00179174 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED2D0EF2739B49F00179174 /* SceneDelegate.swift */; };
 		DED2D0F22739B49F00179174 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED2D0F12739B49F00179174 /* ViewController.swift */; };
@@ -16,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0715B3E62741F50100786CBD /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		8423164F6168B5BAC10DB813 /* Pods_BugSpray.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BugSpray.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88DE925500AE5DE6582CA0D4 /* Pods-BugSpray.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BugSpray.release.xcconfig"; path = "Target Support Files/Pods-BugSpray/Pods-BugSpray.release.xcconfig"; sourceTree = "<group>"; };
 		DED2D0EA2739B49F00179174 /* BugSpray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BugSpray.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED2D0ED2739B49F00179174 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DED2D0EF2739B49F00179174 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +29,7 @@
 		DED2D0F62739B4A100179174 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DED2D0F92739B4A100179174 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DED2D0FB2739B4A100179174 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC27554505A5334EB455C172 /* Pods-BugSpray.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BugSpray.debug.xcconfig"; path = "Target Support Files/Pods-BugSpray/Pods-BugSpray.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8487925A13E683B4C2AE8DBA /* Pods_BugSpray.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35DED73567D5FC55A794AF23 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8423164F6168B5BAC10DB813 /* Pods_BugSpray.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D0D50D0C2080FE3C5B72FF1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC27554505A5334EB455C172 /* Pods-BugSpray.debug.xcconfig */,
+				88DE925500AE5DE6582CA0D4 /* Pods-BugSpray.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		DED2D0E12739B49F00179174 = {
 			isa = PBXGroup;
 			children = (
 				DED2D0EC2739B49F00179174 /* BugSpray */,
 				DED2D0EB2739B49F00179174 /* Products */,
+				7D0D50D0C2080FE3C5B72FF1 /* Pods */,
+				35DED73567D5FC55A794AF23 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +89,7 @@
 				DED2D0F62739B4A100179174 /* Assets.xcassets */,
 				DED2D0F82739B4A100179174 /* LaunchScreen.storyboard */,
 				DED2D0FB2739B4A100179174 /* Info.plist */,
+				0715B3E62741F50100786CBD /* LogInViewController.swift */,
 			);
 			path = BugSpray;
 			sourceTree = "<group>";
@@ -74,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DED2D0FE2739B4A100179174 /* Build configuration list for PBXNativeTarget "BugSpray" */;
 			buildPhases = (
+				E1F467D8745899512C81ABD5 /* [CP] Check Pods Manifest.lock */,
 				DED2D0E62739B49F00179174 /* Sources */,
 				DED2D0E72739B49F00179174 /* Frameworks */,
 				DED2D0E82739B49F00179174 /* Resources */,
+				011ADF7149093CB012BB64D9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,11 +162,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		011ADF7149093CB012BB64D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BugSpray/Pods-BugSpray-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BugSpray/Pods-BugSpray-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BugSpray/Pods-BugSpray-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1F467D8745899512C81ABD5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BugSpray-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DED2D0E62739B49F00179174 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0715B3E72741F50100786CBD /* LogInViewController.swift in Sources */,
 				DED2D0F22739B49F00179174 /* ViewController.swift in Sources */,
 				DED2D0EE2739B49F00179174 /* AppDelegate.swift in Sources */,
 				DED2D0F02739B49F00179174 /* SceneDelegate.swift in Sources */,
@@ -284,6 +356,7 @@
 		};
 		DED2D0FF2739B4A100179174 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC27554505A5334EB455C172 /* Pods-BugSpray.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -311,6 +384,7 @@
 		};
 		DED2D1002739B4A100179174 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88DE925500AE5DE6582CA0D4 /* Pods-BugSpray.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

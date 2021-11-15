@@ -1,0 +1,6 @@
+framework module Pods_BugSpray {
+  umbrella header "Pods-BugSpray-umbrella.h"
+
+  export *
+  module * { export * }
+}
